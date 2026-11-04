@@ -644,6 +644,12 @@ input,select,textarea{font-family:'Quicksand','Cairo',sans-serif;}
 .mm-feat b{display:block;font-size:14px;color:var(--g900);margin:6px 0 4px;}
 .mm-feat span{font-size:12px;color:var(--muted);line-height:1.6;}
 @media(max-width:700px){.mm-feat{grid-template-columns:repeat(2,1fr);}}
+/* زر السلة أسفل البطاقة + صورة أكبر */
+.pcard{display:flex;flex-direction:column;}
+.card-body{flex:1;}
+.card-img{aspect-ratio:1/1;background:#fff;}
+.card-img img{object-fit:contain !important;}
+.card-qadd{position:static;opacity:1;pointer-events:auto;display:block;width:calc(100% - 28px);margin:0 14px 14px;border-radius:8px;padding:11px;}
 </style>
 </head>
 <body>
@@ -1921,7 +1927,6 @@ function prodCardHtml(p) {
     </div>
     <button class="card-wish ${inW?"on":""}" id="w-${p.code}"
       onclick="event.stopPropagation();toggleWish('${p.code}')">${inW?"❤️":"🤍"}</button>
-    <button class="card-qadd" onclick="event.stopPropagation();quickAdd('${p.code}',this)">+ أضف للسلة</button>
   </div>
   <div class="card-body">
     <p class="card-cat">${p.cat}</p>
@@ -1936,6 +1941,7 @@ function prodCardHtml(p) {
       <span class="stk ${stk.cls}">${stk.txt}</span>
     </div>
   </div>
+  <button class="card-qadd" onclick="event.stopPropagation();quickAdd('${p.code}',this)">+ أضف للسلة</button>
 </div>`;
 }
 
