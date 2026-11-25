@@ -267,13 +267,11 @@ input,select,textarea{font-family:'Cairo',sans-serif;}
 .stk.low{color:#92400E;background:#FEF3C7;}
 .stk.no{color:#991B1B;background:#FEE2E2;}
 .color-dots{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
-.cdot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(0,0,0,.12);cursor:pointer;transition:transform .2s,box-shadow .2s;flex-shrink:0;position:relative;}
-.cdot:hover{transform:scale(1.25);box-shadow:0 0 0 2px white,0 0 0 4px var(--g600);}
+.cdot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(0,0,0,.12);cursor:default;transition:transform .2s,box-shadow .2s;flex-shrink:0;position:relative;}
 .cdot.sel{transform:scale(1.18);box-shadow:0 0 0 2px white,0 0 0 4px var(--g800);}
 .cdot[data-light="1"]{border:2px solid #CBD5E1;}
 .pm-colors{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;}
-.pm-cdot{width:28px;height:28px;border-radius:50%;border:2px solid rgba(0,0,0,.12);cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;}
-.pm-cdot:hover{transform:scale(1.2);box-shadow:0 0 0 3px white,0 0 0 5px var(--g600);}
+.pm-cdot{width:28px;height:28px;border-radius:50%;border:2px solid rgba(0,0,0,.12);cursor:default;transition:transform .2s,box-shadow .2s;position:relative;}
 .pm-cdot.sel{transform:scale(1.15);box-shadow:0 0 0 3px white,0 0 0 5px var(--g800);}
 .pm-cdot[data-light="1"]{border:2px solid #CBD5E1;}
 .pm-clbl{font-size:12px;color:var(--muted);margin-top:4px;}
@@ -1041,7 +1039,7 @@ input,select,textarea{font-family:'Quicksand','Cairo',sans-serif;}
 
 <!-- ══ Ann Bar ══ -->
 <div id="annBar">
-  🎁 توصيل مجاني للطلبات أكثر من 50 ألف &nbsp;•&nbsp; 🍼 خالية من BPA وBPS &nbsp;•&nbsp; 📞 تواصل معنا عبر واتساب
+  🎁 توصيل مجاني للطلبات أكثر من 75 ألف &nbsp;•&nbsp; 🍼 خالية من BPA وBPS &nbsp;•&nbsp; 📞 تواصل معنا عبر واتساب
   <button class="ann-x" onclick="this.parentElement.style.display='none'">✕</button>
 </div>
 
@@ -1260,7 +1258,7 @@ input,select,textarea{font-family:'Quicksand','Cairo',sans-serif;}
     <div class="guar-grid">
       <div class="guar"><div class="gi">↩️</div><strong>ضمان الاسترجاع</strong><span>إرجاع خلال 7 أيام لو فيه خلل بالمنتج</span></div>
       <div class="guar"><div class="gi">💵</div><strong>الدفع عند الاستلام</strong><span>كاش عند وصول الطلب لباب بيتك</span></div>
-      <div class="guar"><div class="gi">🚚</div><strong>توصيل لكل المحافظات</strong><span>وتوصيل مجاني للطلبات أكثر من 50 ألف دينار</span></div>
+      <div class="guar"><div class="gi">🚚</div><strong>توصيل لكل المحافظات</strong><span>وتوصيل مجاني للطلبات أكثر من 75 ألف دينار</span></div>
     </div>
     <div id="reviewsWrap">
       <div class="sec-hd" style="margin-bottom:0"><h2 class="sec-title">⭐ آراء زبائننا</h2></div>
@@ -1303,7 +1301,7 @@ input,select,textarea{font-family:'Quicksand','Cairo',sans-serif;}
       </ul></div>
       <div class="ft-col"><h4>تواصل معنا</h4><ul>
         <li><a href="#" id="ftCity">📍 العراق</a></li>
-        <li><a href="#" id="ftPhone">📱 07732000524</a></li>
+        <li><a href="#" id="ftPhone">📱 07707849922</a></li>
         <li><a href="#" id="ftInstaFt">📸 Instagram</a></li>
         <li>🔄 سياسة الإرجاع: خلال 7 أيام لو فيه خلل</li>
       </ul></div>
@@ -1391,7 +1389,12 @@ input,select,textarea{font-family:'Quicksand','Cairo',sans-serif;}
       <div class="ctr grand"><span>الإجمالي النهائي</span><span id="coTot">0</span></div>
     </div>
     <div class="chm-sub">
-      <button class="btn-wa" id="sendBtn" onclick="orderWA()">💬 إرسال الطلب</button>
+      <button class="btn-wa" id="sendBtn" onclick="orderWA()">💬 إرسال الطلب عبر واتساب</button>
+    </div>
+    <p style="margin-top:10px;font-size:12.5px;line-height:1.9;color:var(--muted);text-align:center;background:#F0FAF4;border-radius:10px;padding:10px 12px">📌 ملاحظة: يتم إرسال الطلب عبر واتساب. بعد إتمام الإرسال يرجى الرجوع إلى الموقع وحفظ <strong style="color:var(--g800)">رقم الطلب</strong> تحسباً لحدوث أي مشكلة.</p>
+    <div id="sendFail" style="display:none;margin-top:12px;padding:12px 14px;border-radius:12px;background:#FEF2F2;color:#991B1B;font-size:13px;line-height:1.8;text-align:center">
+      ⚠️ تعذّر إرسال الطلب (تأكد من الإنترنت). حاول مرة ثانية، أو أرسله مباشرة عبر واتساب:
+      <a id="sendFailWa" href="#" target="_blank" rel="noopener" style="display:block;margin-top:8px;padding:10px;border-radius:10px;background:#25D366;color:#fff;font-weight:800">💬 إرسال عبر واتساب</a>
     </div>
   </div>
 </div>
@@ -1403,6 +1406,11 @@ input,select,textarea{font-family:'Quicksand','Cairo',sans-serif;}
     <div class="suc-ico">🎉</div>
     <h2>انحجز طلبك!</h2>
     <p>شكراً لك 🙏 تم استلام طلبك بنجاح.<br>فريقنا راح يتواصل وياك بأسرع وقت.</p>
+    <div id="ordCodeBox" style="background:#F0FAF4;border:1.5px dashed var(--g600);border-radius:14px;padding:12px;margin:-8px 0 22px">
+      <div style="font-size:12px;color:var(--muted);font-weight:700">كود طلبك</div>
+      <div id="ordCodeEl" style="font-size:24px;font-weight:900;color:var(--g800);letter-spacing:2px;direction:ltr;user-select:all"></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">احتفظ بالكود لتتبع طلبك</div>
+    </div>
     <button onclick="closeSuc()" style="width:100%;padding:13px;background:var(--g800);color:white;border-radius:var(--r);font-size:15px;font-weight:800;cursor:pointer;border:none;font-family:'Cairo',sans-serif;">متابعة التسوق 🏠</button>
     <p class="ord-num" id="ordNumEl"></p>
   </div>
@@ -1434,7 +1442,7 @@ const CFG = {
 
   /* ── معلومات المتجر (غيّر الأرقام والحسابات قبل النشر) ── */
   storeName : "Mooma Baby",
-  waNumber  : "9647707849922",   // رقم الواتساب مع رمز الدولة بدون + (مثال: 9647701234567)
+  waNumber  : "9647707849922",   // رقم الواتساب مع رمز الدولة بدون +
   instagram : "mooma.baby",  // اسم حساب انستاكرام بدون @
   email     : "",
   city      : "العراق",
@@ -1442,7 +1450,7 @@ const CFG = {
 
   /* ── العملة والشحن ── */
   cur       : "دينار",
-  freeShip  : 50000,   // التوصيل مجاني تلقائياً إذا بلغ مجموع الطلب هذا المبلغ أو أكثر
+  freeShip  : 75000,   // التوصيل مجاني تلقائياً إذا بلغ مجموع الطلب هذا المبلغ أو أكثر
   shipCost  : 5000,
 
   /* ── مسار ملف البيانات ── */
@@ -1452,7 +1460,9 @@ const CFG = {
   smartPaging     : true,
   clusterFamilies : true,
 
-  /* ── استلام الطلبات تلقائياً (اتركه فارغاً لواتساب فقط) ── */
+  /* ── استلام الطلبات تلقائياً ──
+     ألصق هنا رابط Google Apps Script (Web App) بعد نشره — شوف ملف order-receiver.gs
+     إذا تُرك فارغاً يرجع الموقع للطريقة القديمة (فتح واتساب) */
   orderEndpoint : "",
 
   /* ── التوصيل: سعر موحد لكل المحافظات، ولأي محافظة سعر مختلف: "البصرة":7000 ── */
@@ -1535,10 +1545,10 @@ const HERO = {
    البطاقتين الثانية والثالثة تظهران صغيرتين على اليسار          */
 
 const PROMO = [
-  { tag:"🍼 الأكثر طلباً",  title:"رضّاعة متوهجة ليلاً", sub:"تدفق بطيء يقلل ابتلاع الهواء",      btn:"تسوّقي",  img:"./images/promo1.webp", bgColor:"#31637E", link:"#products" },
-  { tag:"⭐ جديد",          title:"سلسلة منتجات moomababy",          sub:"رسومات لطيفة وألوان مرحة",          btn:"اكتشفي",  img:"./images/promo2.webp", bgColor:"#6A9DB3", link:"#products" },
+  { tag:"🍼 الأكثر طلباً",  title:"رضّاعات مضادة للمغص", sub:"تدفق بطيء يقلل ابتلاع الهواء",      btn:"تسوّقي",  img:"./images/promo1.webp", bgColor:"#31637E", link:"#products" },
+  { tag:"⭐ جديد",          title:"سلسلة Neeko",          sub:"رسومات لطيفة وألوان مرحة",          btn:"اكتشفي",  img:"./images/promo2.webp", bgColor:"#6A9DB3", link:"#products" },
   { tag:"🎀 مفضّلة الأمهات", title:"مصّاصات أرثودونتية",    sub:"تصميم يناسب فم صغيرك",              btn:"تسوّقي",  img:"./images/promo3.webp", bgColor:"#E8806B", link:"#products" },
-  { tag:"🥤 مفضّلة الأمهات",     title:"رضّاعات مضادة للمغص",  sub:"خطوة لطيفة نحو الشرب بالكوب",        btn:"شوفي المزيد", img:"./images/promo4.webp", bgColor:"#7FB5A3", link:"#products" },
+  { tag:"🥤 من 6 أشهر",     title:"أكواب تدريب لا تسكب",  sub:"خطوة لطيفة نحو الشرب بالكوب",        btn:"شوفي المزيد", img:"./images/promo4.webp", bgColor:"#7FB5A3", link:"#products" },
 ];
 
 /* ╔══════════════════════════════════════════════════════════════╗
@@ -1597,7 +1607,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   safe(initAnalytics);
   safe(applyConfig);
   safe(renderReviews);
-  safe(retryPendingOrders);
   safe(renderVideos);
   safe(renderPromoCards);
   safe(renderHero);
@@ -1937,23 +1946,8 @@ function colorDotsHtml(colors, size="sm") {
   const dots = colors.map((c,i)=>`
     <div class="${cls}" title="${c.name}"
       style="background:${c.hex}"
-      ${c.light?'data-light="1"':""}
-      onclick="event.stopPropagation();selectColor(this,'${size}')"></div>`).join("");
+      ${c.light?'data-light="1"':""}></div>`).join("");
   return `<div class="${size==="lg"?"pm-colors":"color-dots"}">${dots}</div>`;
-}
-
-function selectColor(el, size) {
-  const cls = size==="lg" ? "pm-cdot" : "cdot";
-  el.closest(size==="lg"?".pm-colors":".color-dots")
-    ?.querySelectorAll(`.${cls}`).forEach(d=>d.classList.remove("sel"));
-  el.classList.add("sel");
-  if (size==="lg") {
-    S.selColor = el.title;
-    const lbl = document.getElementById("clbl");
-    if (lbl) { lbl.textContent = `✅ اخترت: ${el.title}`; lbl.classList.remove("need"); }
-  } else {
-    const card = el.closest(".pcard"); if (card) card.dataset.color = el.title;
-  }
 }
 
 /* ── توليد احتمالات اسم الملف من الكود ── */
@@ -2525,9 +2519,8 @@ function openPM(code) {
     <span class="stk ${stk.cls}" style="font-size:12px;padding:4px 12px;width:fit-content">${stk.txt}</span>
     ${p.colors&&p.colors.length?`
     <div>
-      <p class="pm-qlbl">🎨 الألوان المتوفرة <span style="font-size:11px;color:var(--muted);font-weight:400">(${p.colors.length} لون)</span></p>
+      <p class="pm-qlbl">🎨 متوفر بهذه الألوان <span style="font-size:11px;color:var(--muted);font-weight:400">(${p.colors.length} لون)</span></p>
       ${colorDotsHtml(p.colors,"lg")}
-      <p class="pm-clbl" id="clbl">اختر اللون قبل الإضافة للسلة</p>
     </div>`:""}
     ${p.size?`<p style="font-size:13px;color:var(--muted)">📏 المقاس: <strong style="color:var(--dark)">${esc(p.size)}</strong></p>`:""}
     ${p.desc?`<p class="pm-desc">${p.desc}</p>`:""}
@@ -2569,12 +2562,7 @@ function chgMQ(d) {
 
 function addFromPM() {
   if(!S.curProd) return;
-  if (S.curProd.colors.length && !S.selColor) {
-    const l=document.getElementById("clbl");
-    if(l){l.textContent="⚠️ لازم تختار لون أولاً";l.classList.add("need");l.scrollIntoView({behavior:"smooth",block:"center"});}
-    toast("⚠️ اختر اللون أولاً","err"); return;
-  }
-  addToCart(S.curProd.code,S.mqty,S.selColor); closePM();
+  addToCart(S.curProd.code,S.mqty,""); closePM();
   setTimeout(()=>toggleCart(),320);
 }
 
@@ -2613,9 +2601,7 @@ window.addEventListener("hashchange", openFromHash);
 /* ── Cart ── */
 function quickAdd(code, btn) {
   const p=getProd(code); if(!p) return;
-  const color = btn.closest(".pcard")?.dataset.color || "";
-  if (p.colors.length && !color) { toast("🎨 اختر اللون أولاً","inf"); openPM(code); return; }
-  addToCart(code,1,color);
+  addToCart(code,1,"");
 }
 
 function addToCart(code,qty=1,color="") {
@@ -2865,20 +2851,42 @@ function orderWA() {
     shipping:T.ship, total:T.total, source:location.href
   };
 
-  btn.disabled = true; setTimeout(()=>{btn.disabled=false;},4000);
-  postOrder(order);                                                  // تسجيل الطلب (Sheets/Telegram)
-  window.open(`https://wa.me/${CFG.waNumber}?text=${encodeURIComponent(msg)}`,"_blank");   // لازم يكون مباشر بعد الضغطة
-  track("purchase", {id:num, value:T.total, items:lines});
+  const waLink = `https://wa.me/${CFG.waNumber}?text=${encodeURIComponent(msg)}`;
+  const finish = () => {
+    track("purchase", {id:num, value:T.total, items:lines});
+    closeChm(); S.cart=[]; S.coupon=null; saveCart(); updateCartUI();
+    document.getElementById("coCoupon").value=""; document.getElementById("coupMsg").textContent="";
+    showThanks(num);
+  };
+  const fail = document.getElementById("sendFail");
+  fail.style.display="none";
 
-  try { localStorage.setItem("mm_last_order", JSON.stringify({num, ts:Date.now(), done:false})); } catch(e) {}
-  closeChm(); S.cart=[]; S.coupon=null; saveCart(); updateCartUI();
-  document.getElementById("coCoupon").value=""; document.getElementById("coupMsg").textContent="";
-  showThanks(num);
+  /* بدون رابط استلام: الطريقة القديمة (فتح واتساب) */
+  if (!CFG.orderEndpoint) {
+    btn.disabled = true; setTimeout(()=>{btn.disabled=false;},4000);
+    window.open(waLink,"_blank");   // لازم يكون مباشر بعد الضغطة
+    try { localStorage.setItem("mm_last_order", JSON.stringify({num, ts:Date.now(), done:false})); } catch(e) {}
+    finish(); return;
+  }
+
+  /* الطريقة الجديدة: الإرسال بالخلفية، والزبون يشوف "شكراً + كود الطلب" مباشرة */
+  const oldTxt = btn.textContent;
+  btn.disabled = true; btn.textContent = "⏳ جاري إرسال الطلب...";
+  postOrder(order).then(ok=>{
+    btn.disabled = false; btn.textContent = oldTxt;
+    if (ok) finish();
+    else {
+      document.getElementById("sendFailWa").href = waLink;
+      fail.style.display = "block";
+      toast("⚠️ تعذّر إرسال الطلب، حاول مرة ثانية","err");
+    }
+  });
 }
 
 /* رسالة "انحجز طلبك": تظهر فوراً، وتظهر مرة ثانية إذا رجع الزبون من واتساب والصفحة اتحدّثت */
 function showThanks(num) {
-  document.getElementById("ordNumEl").textContent=`رقم الطلب: ${num}`;
+  document.getElementById("ordNumEl").textContent="";
+  document.getElementById("ordCodeEl").textContent=num;
   document.getElementById("sucm").classList.add("open");
   document.body.style.overflow="hidden";
 }
@@ -2892,24 +2900,24 @@ function checkPendingThanks() {
 window.addEventListener("pageshow", ()=>setTimeout(checkPendingThanks,300));
 document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) setTimeout(checkPendingThanks,300); });
 
-/* إرسال الطلب لـ Google Apps Script — وإذا فشل (نت ضعيف) يُحفظ ويُعاد إرساله تلقائياً */
-function postOrder(order) {
-  if (!CFG.orderEndpoint) return;
-  fetch(CFG.orderEndpoint, {
-    method:"POST", mode:"no-cors", keepalive:true,
-    headers:{"Content-Type":"text/plain;charset=utf-8"},
-    body: JSON.stringify(order)
-  }).catch(()=>{
-    const q = JSON.parse(localStorage.getItem("mm_pending")||"[]");
-    q.push(order); localStorage.setItem("mm_pending", JSON.stringify(q.slice(-10)));
-  });
-}
-function retryPendingOrders() {
-  if (!CFG.orderEndpoint) return;
-  let q; try { q = JSON.parse(localStorage.getItem("mm_pending")||"[]"); } catch(e) { q=[]; }
-  if (!q.length) return;
-  localStorage.removeItem("mm_pending");
-  q.forEach(postOrder);
+/* إرسال الطلب للخلفية (Google Apps Script) — يرجّع true إذا انسجّل الطلب بنجاح.
+   يعيد المحاولة مرة وحدة تلقائياً. الكود نفسه (orderNo) يمنع تكرار الطلب لو انرسل مرتين. */
+async function postOrder(order) {
+  for (let i=0; i<2; i++) {
+    try {
+      const ctl = new AbortController(); const t = setTimeout(()=>ctl.abort(), 15000);
+      const r = await fetch(CFG.orderEndpoint, {
+        method:"POST", signal:ctl.signal,
+        headers:{"Content-Type":"text/plain;charset=utf-8"},   // بدون preflight
+        body: JSON.stringify(order)
+      });
+      clearTimeout(t);
+      const j = await r.json();
+      if (j && j.ok) return true;
+    } catch(e) {}
+    await new Promise(r=>setTimeout(r,800));
+  }
+  return false;
 }
 
 function closeSuc(){
