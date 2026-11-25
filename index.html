@@ -2827,7 +2827,7 @@ function orderWA() {
   else localStorage.removeItem("mm_cust");
 
   const T = calcTotals(city);
-  const num = "HMX" + Date.now().toString().slice(-6) + Math.floor(Math.random()*90+10);
+  const num = "MOM" + Date.now().toString().slice(-6) + Math.floor(Math.random()*90+10);
   const lines = S.cart.map(it=>({
     code:it.code, name:it.name, qty:it.qty, price:it.price,
     color:it.color||"", size:it.size||"", total:it.price*it.qty
